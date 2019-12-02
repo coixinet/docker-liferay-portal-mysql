@@ -12,7 +12,7 @@ RUN echo 'deb http://repo.mysql.com/apt/debian stretch mysql-5.7' > /etc/apt/sou
   gpg --recv-keys 5072E1F5 && \
   gpg --export 5072E1F5 > /etc/apt/trusted.gpg.d/5072E1F5.gpg && \
   apt-get update && \
-  apt-get -y install curl supervisor mysql-server="5.7.23-1debian8" pwgen telnet unzip && \
+  apt-get -y install curl supervisor mysql-server="5.7.28-1debian9" pwgen telnet unzip && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   useradd -ms /bin/bash liferay
