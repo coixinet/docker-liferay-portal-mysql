@@ -7,6 +7,7 @@ ENV LIFERAY_TOMCAT_URL=https://sourceforge.net/projects/lportal/files/Liferay%20
 RUN mkdir ~/.gnupg
 RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
 # Install packages
+RUN sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5072E1F5
 RUN echo 'deb http://repo.mysql.com/apt/debian stretch mysql-5.7' > /etc/apt/sources.list.d/mysql-5.7.list && \
   gpg --export 5072E1F5 > /etc/apt/trusted.gpg.d/5072E1F5.gpg && \
   gpg --recv-keys 5072E1F5 && \
