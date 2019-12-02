@@ -4,7 +4,8 @@ MAINTAINER Manuel de la Peña <manuel.delapenya@liferay.com>
 ENV DEBIAN_FRONTEND noninteractive
 ENV LIFERAY_HOME=/liferay
 ENV LIFERAY_TOMCAT_URL=https://sourceforge.net/projects/lportal/files/Liferay%20Portal/7.1.0%20GA1/liferay-ce-portal-tomcat-7.1.0-ga1-20180703012531655.zip/download
-
+RUN mkdir ~/.gnupg
+RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
 # Install packages
 RUN echo 'deb http://repo.mysql.com/apt/debian jessie mysql-5.7' > /etc/apt/sources.list.d/mysql-5.7.list && \
   gpg --export 5072E1F5 > /etc/apt/trusted.gpg.d/5072E1F5.gpg && \
